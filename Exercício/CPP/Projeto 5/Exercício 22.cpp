@@ -4,21 +4,60 @@
 #include <locale.h>
 #include <conio.h>
 
+
 int main (void) {
 	setlocale(LC_ALL, "Portuguese");
 	
-	float hamburguer, xburguer, batataFrita, milkshake;
+	int pedido, unidades;
+	float resultado;
 	
-	printf ("Qual o seu pedido?\n> ");
-	scanf ("%f", &hamburguer, "%f", &xburguer, "%f", &batataFrita, "%f", &milkshake);
+	int finalizado = 0;
 	
-	hamburguer = 4,20;
-	xburguer = 5,50;
-	batataFrita = 3,80;
-	milkshake = 5,80;
+	while (finalizado == 0){
 	
-	
-	
-	printf ("O valor do seu pedido � R$ = %.2f", scanf);
-	
+		printf ("\nOlá, bem vinde!\n\n");
+		printf ("Qual o seu pedido?\n\n");
+		printf ("1. Hamburguer: R$ 4,20\n");
+		printf ("2. XBurguer: R$ 5,50\n");
+		printf ("3. Batata Frita: R$ 3,80\n");
+		printf ("4. Milkshake: R$ 5,80\n");
+		printf ("5. Quero finalizar meu pedido.\n\n");
+		
+		scanf ("%d", &pedido);
+		
+		switch (pedido) {
+			
+			case 1: 
+			printf ("\nE quantas unidades você deseja?\n\n");
+			scanf ("%d", &unidades);
+			resultado = resultado + (4.20 * unidades);
+			break;
+			
+			case 2: 
+			printf ("\nE quantas unidades você deseja?\n\n");
+			scanf ("%d", &unidades);
+			resultado = resultado + (5.50 * unidades);
+			break;
+			
+			case 3: 
+			printf ("\nE quantas unidades você deseja?\n\n");
+			scanf ("%d", &unidades);
+			resultado = resultado + (3.80 * unidades);
+			break;
+			
+			case 4: 
+			printf ("\nE quantas unidades você deseja?\n\n");
+			scanf ("%d", &unidades);
+			resultado = resultado + (5.8 * unidades);
+			break;
+			
+			case 5: printf ("\nO total do seu pedido é: %.2f", resultado);
+					finalizado++;
+			break;
+			
+			default: printf ("Essa opção não existe");
+			break;
+			
+		}
+	}
 }
